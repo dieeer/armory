@@ -4,8 +4,8 @@ from models.player import Player
 from models.training import Training
 
 def save(player):
-    sql =  "INSERT INTO players (name, position, fatigue) VALUES (%s, %s, %s) RETURNING id"
-    values = [player.name, player.position, player.fatigue]
+    sql =  "INSERT INTO players (name, shirt_no, position, fatigue) VALUES (%s, %s, %s, %s) RETURNING id"
+    values = [player.name, player.shirt_no, player.position, player.fatigue]
     results = run_sql (sql, values)
     player.id = results [0]['id']
     return player
@@ -18,7 +18,7 @@ def select(id):
     
     if len(results) > 0:
         result = results[0]
-        player = Player(result['name'], result['position'], result['fatigue'], row ['id'])
+        player = Player(result['name'], result['shirt_no'], result['position'], result['fatigue'], result['id'])
     return player
 
 def select_all():
@@ -27,7 +27,7 @@ def select_all():
     sql = "SELECT * FROM players"
     results = run_sql(sql)
     for row in results:
-        player = Player(row['name'], row['position'], row['fatigue'], row ['id'])
+        player = Player(row['name'], row['shirt_no'], row['position'], row['fatigue'], row ['id'])
         players.appened(player)
     return players
 

@@ -5,6 +5,7 @@ DROP TABLE IF EXISTS players_trainings;
 CREATE TABLE players (
     id SERIAL PRIMARY KEY,
     name VARCHAR(255),
+    shirt_no INT,
     position VARCHAR(255),
     fatigue INT
 );
