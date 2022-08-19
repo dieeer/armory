@@ -11,8 +11,10 @@ CREATE TABLE players (
 
 CREATE TABLE trainings (
     id SERIAL PRIMARY KEY,
+    training_name VARCHAR(255),
     time VARCHAR(255),
-    duration INT
+    duration INT,
+    intensity VARCHAR(255)
 );
 
 CREATE TABLE players_trainings (
