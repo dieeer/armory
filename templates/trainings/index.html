@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<div>
+    {% for training in trainings %}
+    <p class='training'>
+        {{training.training_name}}
+        <ul>
+            <li >
+                <p>{{training.time}}</p>
+            </li>
+            <li>
+                <p>{{training.duration}}</p>
+            <li>
+                <p>{{training.intensity}} </p>
+            </li>
+        </ul>
+    </p>
+        {% endfor %}
+</div>
+{% endblock %}
