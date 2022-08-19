@@ -28,7 +28,7 @@ def select_all():
     results = run_sql(sql)
     for row in results:
         player = Player(row['name'], row['shirt_no'], row['position'], row['fatigue'], row ['id'])
-        players.appened(player)
+        players.append(player)
     return players
 
 def trainings(player):

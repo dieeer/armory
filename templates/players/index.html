@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<div>
+    {% for player in players %}
+    <p class='player'>
+        {{player.name}}
+        <ul>
+            <li class='shirt'>
+                <p>shirt number: {{player.shirt_no}}</p>
+            </li>
+            <li>
+                <p>position: {{player.position}} </p>
+            <li>
+                <p>fatigue: {{player.fatigue}} </p>
+            </li>
+        </ul>
+    </p>
+        {% endfor %}
+</div>
+{% endblock %}
