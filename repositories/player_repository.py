@@ -44,7 +44,7 @@ def trainings(player):
         
     return trainings
 
-def delete_al():
+def delete_all():
     sql = "DELETE from players"
     run_sql(sql)
     
