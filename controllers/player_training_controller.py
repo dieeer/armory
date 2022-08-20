@@ -11,6 +11,8 @@ def player_training():
     player_training = player_training_repository.select_all()
     return render_template('player_training/index.html', player_training = player_training)
 
+
+
 @player_training_blueprint.route('player_training/new', methods =['GET'])
 def new_player_training():
     players = player_repository.select_all
