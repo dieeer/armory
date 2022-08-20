@@ -24,8 +24,7 @@ def show(id):
 @players_blueprint.route('/players/new', methods =['GET'])
 def new_player():
     players = player_repository.select_all()
-    trainings = training_repository.select_all()
-    return render_template('/players/new.html', players = players, trainings = trainings)
+    return render_template('/players/new.html', players = players)
 
 @players_blueprint.route('/players', methods =['POST'])
 def create_player():

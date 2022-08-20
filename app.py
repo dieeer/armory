@@ -2,11 +2,13 @@ from flask import Flask, render_template
 
 from controllers.player_controller import players_blueprint
 from controllers.trainings_controller import trainings_blueprint
+# from controllers.player_training_controller import player_training_blueprint
 
 app = Flask(__name__)
 
 app.register_blueprint(players_blueprint)
 app.register_blueprint(trainings_blueprint)
+# app.register_blueprint(player_training_blueprint)
 
 @app.route('/')
 def home():
