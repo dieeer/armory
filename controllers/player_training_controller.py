@@ -16,3 +16,19 @@ def new_player_training():
     players = player_repository.select_all
     trainings = training_repository.select_all()
     return render_template('/player_training/new.html', players = players, trainings = trainings)
+
+@player_training_blueprint.route('/player_trainings', methods =['POST'])
+def create_player_training():
+    player_id = request.form['player_id']
+    training_id = request.form['training_id']
+    comments = request.form['comments']
+    player = player_repository.select(player_id)
+    training = training_repository.select(training_id)
+    player_training = Player_Training(player, training, comments)
+    player_training_repository.save(player_training)
+    return redirect('/player_trainings')
+
+@player_training_blueprint.route('/player_trainings/<id>/delete', methods = ['POST'])
+def delete_player_training(id):
+    player_training_repository.delete(id)
+    return redirect('/player_trainings')

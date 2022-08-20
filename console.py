@@ -21,9 +21,19 @@ player_repository.save(player2)
 player3 = Player('Kieran Tierney', 2, 'LWB', 60)
 player_repository.save(player3)
 
+player4 = Player('Aaron Ramsdale', 1, 'GK', 0)
+player_repository.save(player4)
+
 
 training1 = Training('Warm-up', '13:00', 30, 'low')
 training_repository.save(training1)
 
+training2 = Training('Catching and throwing', '13:00', 15, 'medium')
+
+
 player_training1 = Player_Training(player1, training1, "nothing to note")
 player_training_repository.save(player_training1)
+
+player_training2 = Player_Training(player4, training2,)
+
+
