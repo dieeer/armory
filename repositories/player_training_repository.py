@@ -10,8 +10,8 @@ import repositories.training_repository as training_repository
 import repositories.player_training_repository as player_training_repository
 
 def save(player_training):
-    sql = "INSERT INTO player_training  (player_id, training_id, comment) VALUES (%s, %s, %s) RETURNING id"
-    values = [player_training.player.id, player_training.training.id, player_training.comment]
+    sql = "INSERT INTO players_trainings  (player_id, training_id, comments) VALUES (%s, %s, %s) RETURNING id"
+    values = [player_training.player.id, player_training.training.id, player_training.comments]
     results = run_sql (sql, values)
     player_training.id = results [0]['id']
     return player_training
@@ -45,10 +45,10 @@ def player(player_training):
     return player
 
 def delete_all():
-    sql = "DELETE FROM player_trainings"
+    sql = "DELETE FROM players_trainings"
     run_sql(sql)
     
 def delete(id):
-    sql = "DELETE FROM player_trainings WHERE id = %s"
+    sql = "DELETE FROM players_trainings WHERE id = %s"
     values =[id]
     run_sql(sql, values)
