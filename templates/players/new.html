@@ -35,8 +35,9 @@
                 <option value='ST'>striker</option>
                 <option value='RF'>right forward</option>
             </optgroup>
-            <label for='fatigue' value='number' id='fatigue'>fatigue</label>
-            <input type='range' min='0' max='100' name='fatigue'>
+            <label for='fatigue' value='number' id='fatigue'><p>fatigue level:</p></label>
+            <input type='range' min='0' max='100' name='fatigue' oninput="num.value = this.value" label='fatigue level:' default='0'>
+            <output id="num">0</output>
             <input class='button' type='submit' value='submit'>
         </form>
 
