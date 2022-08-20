@@ -5,3 +5,7 @@ class Player:
         self.position = position
         self.fatigue = fatigue
         self.id = id
+        
+    def raise_fatigue(self, addition):
+        self.fatigue += addition
+        return self.fatigue
