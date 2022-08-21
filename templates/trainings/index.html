@@ -6,8 +6,9 @@
     <a class="button" href="/trainings/new">add new training</a>
 <div>
     {% for training in trainings %}
+    <a href="/trainings/{{training.id}}">
     <p class='training'>
-        {{training.training_name}}
+        {{training.training_name}}</a>
         <ul>
             <li >
                 <p>{{training.time}}</p>

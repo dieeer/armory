@@ -16,18 +16,18 @@ def select_all():
     results = run_sql(sql)
     
     for row in results:
-        training = Training(row['training_name'], row['time'], row['duration'], row['intensity'])
+        training = Training(row['training_name'], row['time'], row['duration'], row['intensity'], row['id'])
         trainings.append(training)
     return trainings
 
 def select(id):
     training = None
     sql = "SELECT * FROM trainings WHERE id = %s"
-    values = ['id']
+    values = [id]
     result = run_sql(sql, values)[0]
     
     if result is not None:
-        training = Training(result['training_name'], result['time'], result['duration'], result ['intensity'])
+        training = Training(result['training_name'], result['time'], result['duration'], result ['intensity'], result['id'])
     return training
 
 def players(training):

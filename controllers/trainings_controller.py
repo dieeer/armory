@@ -16,11 +16,13 @@ def trainings():
     trainings = training_repository.select_all()
     return render_template("trainings/index.html", trainings = trainings)
 
-# @trainings_blueprint.route('/trainings/<id>')
-# def show(id):
-#     player = player_repository.select(id)
-#     trainings = player_repository.trainings(player)
-#     return render_template('players/show.html', player = player, trainings = trainings)
+@trainings_blueprint.route('/trainings/<id>')
+def show(id):
+    training = training_repository.select(id)
+    print(training)
+    player = training_repository.players(training)
+    print(player)
+    return render_template('/trainings/show.html', training = training, player = player)
 
 @trainings_blueprint.route('/trainings/new', methods=['GET'])
 def new_trainings():
