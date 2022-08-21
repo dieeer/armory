@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1> {{player.name }} </h1>
+
+<div> 
+    <p>{{player.shirt_no}}</p>
+    <p>{{player.position}}</p>
+    <p>{{player.fatigue}}</p>
+    {% if player.fatigue >= 60 %}
+        <p> match fit?: ❌</p>
+        {% elif player.fatigue <= 59 %}
+        <p>match fit?: ✅</p>
+        {% endif %}
+</div>
+
+{% endblock %}

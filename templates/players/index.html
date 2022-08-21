@@ -10,7 +10,8 @@
 <div>
     {% for player in players %}
     <p class='player'>
-        {{player.name}}
+        <a href='/players/{{player.id}}'>
+        {{player.name}}</a>
         <ul>
             <li class='shirt'>
                 <p>shirt number: {{player.shirt_no}}</p>
