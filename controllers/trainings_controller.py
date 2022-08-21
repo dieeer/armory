@@ -38,3 +38,18 @@ def create_trainings():
     new_training = Training(training_name, time, duration, intensity)
     training_repository.save(new_training)
     return redirect('/trainings')
+
+@trainings_blueprint.route('/trainings/<id>/edit', methods=['GET'])
+def edit_trainings(id):
+    training = training_repository.select(id)
+    return render_template('/trainings/edit.html', training = training)
+
+@trainings_blueprint.route('/trainings/<id>', methods = ['POST'])
+def update_trainings():
+    training_name = request.form['training_name']
+    time = request.form['time']
+    duration = request.form['duration']
+    intensity = request.form['intensity']
+    training = Training(training_name, time, duration, intensity)
+    training_repository.save(training)
+    return redirect('/trainings')
