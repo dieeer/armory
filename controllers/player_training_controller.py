@@ -4,20 +4,20 @@ import repositories.player_repository as player_repository
 import repositories.training_repository as training_repository
 import repositories.player_training_repository as player_training_repository
 
-player_training_blueprint = Blueprint("player_training", __name__)
+player_training_blueprint = Blueprint("player_trainings", __name__)
 
-@player_training_blueprint.route("player_training")
+@player_training_blueprint.route("/player_trainings")
 def player_training():
     player_training = player_training_repository.select_all()
-    return render_template('player_training/index.html', player_training = player_training)
+    return render_template('player_trainings/index.html', player_training = player_training)
 
 
 
-@player_training_blueprint.route('player_training/new', methods =['GET'])
+@player_training_blueprint.route('/player_trainings/new', methods =['GET'])
 def new_player_training():
-    players = player_repository.select_all
+    players = player_repository.select_all()
     trainings = training_repository.select_all()
-    return render_template('/player_training/new.html', players = players, trainings = trainings)
+    return render_template('/player_trainings/new.html', players = players, trainings = trainings)
 
 @player_training_blueprint.route('/player_trainings', methods =['POST'])
 def create_player_training():

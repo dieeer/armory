@@ -19,13 +19,13 @@ def save(player_training):
 def select_all():
     player_trainings = []
     
-    sql = 'SELECT * FROM player_training'
+    sql = 'SELECT * FROM players_trainings'
     results = run_sql(sql)
     
     for row in results:
         player = player_repository.select(row['player_id'])
         training = training_repository.select(row['training_id'])
-        player_training = Player_Training(player, training, row['comment'], row['id'])
+        player_training = Player_Training(player, training, row['comments'], row['id'])
         player_trainings.append(player_training)
     return player_trainings
 

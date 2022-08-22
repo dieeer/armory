@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1> assign a player to training </h1>
+
+<form action='/player_trainings' method='POST'>
+    <label for='player'> select a player</label>
+    <select name='player_id' id='player'>
+        {% for player in players %}
+        <option value='{{player.id}}'>{{player.name}}</option>
+        {% endfor %}
+    </select>
+
+    <label for='training'>select training</label>
+    <select name='training_id' id='training'>
+        {% for training in trainings %}
+        <option value='{{training.id}}'>{{training.training_name}}</option>
+        {% endfor %}
+    </select>
+
+    <label for='comments'>add a comment</label>
+    <textarea name='comments' id='comments' cols='30' rows='10'></textarea>
+    <input type='submit' value='assign'>
+
+{% endblock %}

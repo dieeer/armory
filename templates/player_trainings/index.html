@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<p class="btn--wrapper">
+    <a class="btn btn--action" href="/player_trainings/new">New assignment</a>
+  </p>
+  
+
+{%for assignment in player_training %}
+<div>
+    <p>{{assignment.player.name}}</p>
+    <p>{{assignment.training.training_name}}</p>
+    <hr>
+{% endfor %}
+
+</div>
+{% endblock %}
