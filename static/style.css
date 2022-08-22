@@ -1,0 +1,33 @@
+nav {
+    width: 100%;
+    display: flex;
+    font-family: 'Bebas Neue', cursive;
+    padding:16px;
+    flex-flow: row;
+    align-items: center;
+    font-size: 1.5rem;
+    overflow: hidden;
+
+}
+
+ul > li {
+    list-style: none;
+    display: inline-flex;
+    padding:16px;
+}
+
+ul > li > a {
+    text-decoration: none
+}
+
+ul > li > a:hover {
+    text-decoration: underline;
+}
+
+#logo {
+    height: 100px;
+}
+
+p {
+    font-family: 'Bebas Neue', cursive;
+}
