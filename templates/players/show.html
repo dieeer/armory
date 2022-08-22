@@ -4,7 +4,7 @@
 <h1> {{player.name }} </h1>
 <p><a href='/players/{{player.id}}/edit'>edit</a></p>
 <form action="/players/{{ player.id }}/delete" method="POST">
-    <input class="btn btn--danger" type="submit" value="delete" />
+    <input class="btn btn--danger" type="submit" value="delete" onclick= "return confirm('confirm deleting {{player.name}}?')">
 
 <div> 
     <p>{{player.shirt_no}}</p>

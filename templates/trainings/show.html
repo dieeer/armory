@@ -4,7 +4,7 @@
 <h1> {{training.training_name}} </h1>
 <p><a href='/trainings/{{training.id}}/edit'>edit</a></p>
 <form action="/trainings/{{ training.id }}/delete" method="POST">
-    <input class="btn btn--danger" type="submit" value="delete" />
+    <input class="btn btn--danger" type="submit" value="delete" onclick= "return confirm('confirm deleting {{training.training_name}}?')">
 <div>
     <p>{{training.time}}</p>
     <p>{{training.duration}}</p>
