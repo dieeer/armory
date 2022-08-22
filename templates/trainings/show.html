@@ -5,9 +5,27 @@
 <p><a href='/trainings/{{training.id}}/edit'>edit</a></p>
 <form action="/trainings/{{ training.id }}/delete" method="POST">
     <input class="btn btn--danger" type="submit" value="delete" onclick= "return confirm('confirm deleting {{training.training_name}}?')">
+    <a class="btn btn--action" href="/player_trainings/new">New assignment</a>
 <div>
     <p>{{training.time}}</p>
     <p>{{training.duration}}</p>
     <p>{{training.intensity}}</p>
 </div>
+
+<div>
+    <p>players assigned:</p>
+    {% for assignment in players_trainings %}
+    <ul>
+        <li>
+            <p>{{assignment.player.name}}</p>
+                
+        </li>
+    </ul>
+
+
+    <p><form action="/player_trainings/{{assignment.id}}/delete" method='POST'>remove from training</a></p>
+        <input type='submit' value="delete">
+
+    {% endfor %}
+
 {% endblock %}

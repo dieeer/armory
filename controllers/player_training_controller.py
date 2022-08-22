@@ -19,6 +19,13 @@ def new_player_training():
     trainings = training_repository.select_all()
     return render_template('/player_trainings/new.html', players = players, trainings = trainings)
 
+@player_training_blueprint.route('/player_trainings/new/<id>', methods =['GET'])
+def new_player_training_routed(id):
+    players = player_repository.select_all()
+    trainings = training_repository.select_all()
+    return render_template('/player_trainings/new.html', players = players, trainings = trainings, selected_id=id)
+
+
 @player_training_blueprint.route('/player_trainings', methods =['POST'])
 def create_player_training():
     player_id = request.form['player_id']

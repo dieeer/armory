@@ -20,7 +20,6 @@ def players():
 def show(id):
     player = player_repository.select(id)
     trainings = player_repository.get_training_for_player_with_id(player)
-    print(trainings)
     return render_template('players/show.html', player = player, trainings = trainings)
 
 @players_blueprint.route('/players/new', methods =['GET'])

@@ -15,12 +15,12 @@
     <label for='training'>select training</label>
     <select name='training_id' id='training'>
         {% for training in trainings %}
-        <option value='{{training.id}}'>{{training.training_name}}</option>
+        <option {% if selected_id == training.id %} selected {% endif %} value='{{training.id}}'>{{training.training_name}}</option>
         {% endfor %}
     </select>
 
     <label for='comments'>add a comment</label>
     <textarea name='comments' id='comments' cols='30' rows='10'></textarea>
-    <input type='submit' value='assign'>
+    <input type='submit' value='assign' onclick= "return confirm('confirm assignment?')">
 
 {% endblock %}

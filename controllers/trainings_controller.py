@@ -19,10 +19,9 @@ def trainings():
 @trainings_blueprint.route('/trainings/<id>')
 def show(id):
     training = training_repository.select(id)
-    print(training)
-    player = training_repository.players(training)
-    print(player)
-    return render_template('/trainings/show.html', training = training, player = player)
+    players = training_repository.players(training)
+    players_trainings = player_training_repository.select_all()
+    return render_template('/trainings/show.html', training = training, players = players, players_trainings = players_trainings)
 
 @trainings_blueprint.route('/trainings/new', methods=['GET'])
 def new_trainings():
