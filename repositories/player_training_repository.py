@@ -35,7 +35,7 @@ def training(player_training):
     results = run_sql(sql, values)[0]
     training = Training(results['training_name'], results['time'], results['duration'], results['intensity'], results['id'])
 
-    return player_training
+    return training
 
 def player(player_training):
     sql = 'SELECT * FROM players WHERE id = %s'

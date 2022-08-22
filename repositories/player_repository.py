@@ -31,17 +31,17 @@ def select_all():
         players.append(player)
     return players
 
-def trainings(player):
-    trainings = []
+# def trainings(player):
+#     trainings = []
     
-    sql = "SELECT trainings.* FROM trainings INNER JOIN player_trainings ON player_trainings.trainings_id = trainings.id WHERE player_id = %s"
-    values=[player.id]
-    results = run_sql(sql, values)
+#     sql = "SELECT FROM trainings INNER JOIN players_trainings ON players_trainings.training_id = trainings.id WHERE player_id = %s"
+#     values=[player.id]
+#     results = run_sql(sql, values)
     
-    for row in results:
-        training = Training(row['training_name'], row['time'], row['duration'], row['intensity'])
-        trainings.appened(training)
-    return trainings
+#     for row in results:
+#         training = Training(row['training_name'], row['time'], row['duration'], row['intensity'])
+#         trainings.append(training)
+#     return trainings
 
 def delete_all():
     sql = "DELETE from players"
@@ -57,3 +57,15 @@ def update(player):
     values = [player.name, player.shirt_no, player.position, player.fatigue, player.id]
     run_sql(sql, values)
     
+def get_training_for_player_with_id(player):
+    trainings = []
+    
+    sql = "SELECT trainings.* FROM trainings INNER JOIN players_trainings ON players_trainings.training_id = trainings.id  WHERE player_id = %s"
+    values = [player.id]
+    results = run_sql(sql, values)
+    
+    for row in results:
+        training = Training(row['training_name'], row['time'], row['duration'], row['intensity'], row['id'])
+        trainings.append(training)
+    print(trainings)
+    return trainings

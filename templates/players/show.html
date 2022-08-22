@@ -17,4 +17,15 @@
         {% endif %}
 </div>
 
+<div>
+    <p>current training sessions:</p>
+    {% for assignments in trainings %}
+    <ul>
+        <li>
+            <p><a href='/trainings/{{assignments.id}}'>{{assignments.training_name}}</a></p>
+        </li>
+    </ul>
+    {% endfor %}
+</div>
+
 {% endblock %}

@@ -7,6 +7,8 @@ from models.player_training import Player_Training
 
 import repositories.player_repository as player_repository
 import repositories.training_repository as training_repository
+import repositories.player_training_repository as player_training_repository
+
 players_blueprint = Blueprint("players", __name__)
 
 @players_blueprint.route("/players")
@@ -17,7 +19,8 @@ def players():
 @players_blueprint.route('/players/<id>')
 def show(id):
     player = player_repository.select(id)
-    trainings = training_repository.select_all()
+    trainings = player_repository.get_training_for_player_with_id(player)
+    print(trainings)
     return render_template('players/show.html', player = player, trainings = trainings)
 
 @players_blueprint.route('/players/new', methods =['GET'])
