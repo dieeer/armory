@@ -46,3 +46,8 @@ def players(training):
 def delete_all():
     sql = "DELETE FROM trainings"
     run_sql(sql)
+    
+def update(training):
+    sql = "UPDATE trainings SET (training_name, time, duration, intensity) = (%s, %s, %s, %s) WHERE id = %s"
+    values = [training.training_name, training.time, training.duration, training.intensity, training.id]
+    run_sql(sql, values)

@@ -1,5 +1,27 @@
 {% extends 'base.html' %}
 
 {% block content %}
-test
+
+<form action='/trainings/{{training.id}}' method='POST'>
+    <div>
+        <label for='training_name'>training name</label>
+        <input type="text" id='training_name' name='training_name' value='{{training.training_name}}'required autofocus>
+
+        <label for='time'>time</label>
+        <input type="text" id='time' name='time' value='{{training.time}}'required autofocus default='{{training.time}}'>
+
+        <label for='duration'>duration</label>
+            <input type="duration" id='duration' name='duration' value='{{training.duration}}'required autofocus>
+
+        <label for='intensity'>intensity</label>
+            <select id='intensity' name='intensity'>
+                <option value='none'>none</option>
+                <option value='low'>low</option>
+                <option value='medium'>medium</option>
+                <option value='high'>high</option>
+            </select>
+            <button type='submit' class='submit'>update training</button>
+        
+    
+
 {% endblock %}

@@ -41,11 +41,14 @@ def trainings(player):
     for row in results:
         training = Training(row['training_name'], row['time'], row['duration'], row['intensity'])
         trainings.appened(training)
-        
     return trainings
 
 def delete_all():
     sql = "DELETE from players"
     run_sql(sql)
     
+def update(player):
+    sql = "UPDATE players SET (name, shirt_no, position, fatigue) = (%s, %s, %s, %s) WHERE id = %s"
+    values = [player.name, player.shirt_no, player.position, player.fatigue, player.id]
+    run_sql(sql, values)
     

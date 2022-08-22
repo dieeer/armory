@@ -45,11 +45,11 @@ def edit_trainings(id):
     return render_template('/trainings/edit.html', training = training)
 
 @trainings_blueprint.route('/trainings/<id>', methods = ['POST'])
-def update_trainings():
+def update_trainings(id):
     training_name = request.form['training_name']
     time = request.form['time']
     duration = request.form['duration']
     intensity = request.form['intensity']
-    training = Training(training_name, time, duration, intensity)
-    training_repository.save(training)
+    training = Training(training_name, time, duration, intensity, id)
+    training_repository.update(training)
     return redirect('/trainings')

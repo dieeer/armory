@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1> add a player </h1>
+
+<form action="/players/{{player.id}}" method="post">
+    <label for='name'>player name: </label>
+    <input for='name' name='name' value='{{player.name}}'>
+    <label for='shirt_no' value='number' id='shirt_no'> shirt number:</label>
+    <input type='number' name='shirt_no' min='1' max ='99' value='{{player.shirt_no}}'>
+    <label for='position' name='position'>
+        <select name='position' id='position'>
+            <option disabled selected value> - select an option - </option>
+            <optgroup label='defense'>
+                <option value='GK' {% if player.position == 'GK' %} selected {% endif %}>goalkeeper</option>
+                <option value='RWB' {% if player.position == 'RWB' %} selected {% endif %}>right wing back</option>
+                <option value='RB'{% if player.position == 'RB' %} selected {% endif %}>right back</option>
+                <option value='CB'{% if player.position == 'CB' %} selected {% endif %}>center back</option>
+                <option value='LWB'{% if player.position == 'LWB' %} selected {% endif %}>left wing back</option>
+                <option value='LB'{% if player.position == 'LB' %} selected {% endif %}>left back</option>
+            </optgroup>
+            <optgroup label='midfield'>
+                <option value='LM'{% if player.position == 'LM' %} selected {% endif %}>left midfielder</option>
+                <option value='LW'{% if player.position == 'LW' %} selected {% endif %}>left winger</option>
+                <option value='CM'{% if player.position == 'CM' %} selected {% endif %}>center midfielder</option>
+                <option value='CDM'{% if player.position == 'CDM' %} selected {% endif %}>center defensive midfielder</option>
+                <option value='CAM'{% if player.position == 'CAM' %} selected {% endif %}>center attacking midfielder</option>
+                <option value='RM'{% if player.position == 'RM' %} selected {% endif %}>right midfielder</option>
+                <option value='RW'{% if player.position == 'RW' %} selected {% endif %}>right winger</option>
+            </optgroup>
+            <optgroup label='attack'>
+                <option value='LF'{% if player.position == 'LF' %} selected {% endif %}>left forward</option>
+                <option value='CF'{% if player.position == 'CF' %} selected {% endif %}>center forward</option>
+                <option value='ST'{% if player.position == 'ST' %} selected {% endif %}>striker</option>
+                <option value='RF'{% if player.position == 'RF' %} selected {% endif %}>right forward</option>
+            </optgroup>
+            <label for='fatigue' value='number' id='fatigue'><p>fatigue level:</p></label>
+            <input type='range' min='0' max='100' name='fatigue' oninput="num.value = this.value" label='fatigue level:' value='{{player.fatigue}}'>
+            <output id="num">0</output>
+            <input class='button' type='submit' value='submit'>
+        </form>
+
+
+
+{% endblock %}

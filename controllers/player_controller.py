@@ -1,3 +1,4 @@
+from crypt import methods
 from flask import Flask, render_template, request, redirect, Blueprint
 
 from models.player import Player
@@ -34,6 +35,21 @@ def create_player():
     fatigue = request.form['fatigue']
     player = Player(name, shirt_no, position, fatigue)
     player_repository.save(player)
+    return redirect('/players')
+
+@players_blueprint.route('/players/<id>/edit', methods=['GET'])
+def edit_player(id):
+    player = player_repository.select(id)
+    return render_template('/players/edit.html', player = player)
+
+@players_blueprint.route('/players/<id>', methods=['POST'])
+def update_player(id):
+    name = request.form['name']
+    shirt_no = request.form['shirt_no']
+    position = request.form['position']
+    fatigue = request.form['fatigue']
+    player = Player(name, shirt_no, position, fatigue, id)
+    player_repository.update(player)
     return redirect('/players')
 
 @players_blueprint.route('/players/<id>/delete', methods =['POST'])
