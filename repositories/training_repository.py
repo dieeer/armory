@@ -40,13 +40,17 @@ def players(training):
     for row in results:
         player = Player(row['name'], row['shirt_no'], row['position'], row['fatigue'], row ['id'])
         players.append(player)
-        
     return players
 
 def delete_all():
     sql = "DELETE FROM trainings"
     run_sql(sql)
-    
+
+def delete_all():
+    sql = "DELETE FROM trainings WHERE id = %s"
+    values =[id]
+    run_sql(sql, values)
+        
 def update(training):
     sql = "UPDATE trainings SET (training_name, time, duration, intensity) = (%s, %s, %s, %s) WHERE id = %s"
     values = [training.training_name, training.time, training.duration, training.intensity, training.id]

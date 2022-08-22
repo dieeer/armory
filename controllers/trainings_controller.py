@@ -53,3 +53,8 @@ def update_trainings(id):
     training = Training(training_name, time, duration, intensity, id)
     training_repository.update(training)
     return redirect('/trainings')
+
+@trainings_blueprint.route('/trainings/<id>/delete', methods=['POST'])
+def delete_training(id):
+    training_repository.delete(id)
+    return redirect('/trainings')
