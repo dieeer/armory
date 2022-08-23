@@ -1,5 +1,5 @@
 class CurrentSquad:
-    def __init__(self, gk, lb, cb1, cb2, rb, lm, cm1, cm2, rm, cam, st, sub1, sub2, sub3, sub4, sub5, sub6 id=None):
+    def __init__(self, gk, lb, cb1, cb2, rb, lm, cm1, cm2, rm, cam, st, sub1, sub2, sub3, sub4, sub5, sub6, id=None):
         self.gk = gk
         self.lb = lb
         self.cb1 = cb1
