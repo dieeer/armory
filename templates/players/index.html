@@ -13,6 +13,7 @@
         <th>shirt number</th>
         <th>position</th>
         <th>fatigue</th>
+        <th>match fit</th>
     </tr>
     {% for player in players %}
     <tr>
@@ -20,6 +21,11 @@
         <td>{{player.shirt_no}}</td>
         <td>{{player.position}}</td>
         <td>{{player.fatigue}}</td>
+        {% if player.fatigue > 50 %}
+        <td>no</td>
+        {% else %}
+        <td>yes</td>
+        {% endif %}
     </tr>
         {% endfor %}
 </table>

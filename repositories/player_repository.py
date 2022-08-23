@@ -31,18 +31,6 @@ def select_all():
         players.append(player)
     return players
 
-# def trainings(player):
-#     trainings = []
-    
-#     sql = "SELECT FROM trainings INNER JOIN players_trainings ON players_trainings.training_id = trainings.id WHERE player_id = %s"
-#     values=[player.id]
-#     results = run_sql(sql, values)
-    
-#     for row in results:
-#         training = Training(row['training_name'], row['time'], row['duration'], row['intensity'])
-#         trainings.append(training)
-#     return trainings
-
 def delete_all():
     sql = "DELETE from players"
     run_sql(sql)
@@ -69,3 +57,6 @@ def get_training_for_player_with_id(player):
         trainings.append(training)
     print(trainings)
     return trainings
+
+def is_player_first_team(player):
+    player.is_player_match_fit(player)

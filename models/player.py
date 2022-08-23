@@ -9,3 +9,9 @@ class Player:
     def raise_fatigue(self, addition):
         self.fatigue += addition
         return self.fatigue
+    
+    def is_player_match_fit(self):
+        if self.fatigue >= 60:
+            return False
+        else:
+            return True

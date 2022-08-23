@@ -16,7 +16,6 @@ class TestPlayer(unittest.TestCase):
     def test_player_has_fatigue(self):
         self.assertEqual(1, player1.fatigue)
         
-    
     def test_can_raise_fatigue(self):
         player1.raise_fatigue(1)
         self.assertEqual(2, player1.fatigue)
