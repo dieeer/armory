@@ -1,19 +1,25 @@
+/* body {
+    background-image: url('/static/images/bg.png');
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+} */
+
 nav {
     width: 100%;
     display: flex;
     font-family: 'Bebas Neue', cursive;
-    padding:16px;
     flex-flow: row;
     align-items: center;
     font-size: 1.5rem;
-    overflow: hidden;
-
+    background-color:rgb(210, 210, 210);
 }
 
 ul > li {
     list-style: none;
     display: inline-flex;
-    padding:16px;
+    margin:16px;
 }
 
 ul > li > a {
@@ -25,7 +31,7 @@ ul > li > a:hover {
     text-decoration: underline;
 }
 
-#logo {
+nav > img{
     height: 100px;
 }
 
@@ -37,8 +43,7 @@ ul > li > a:hover {
 }
 
 #logo-text > a:hover{
-    text-decoration: underline;
-    text-shadow: 0px 0px 12px red;
+    text-shadow: 0px 0px 12px red,  0px 0px 24px blue;
 }
 
 p {

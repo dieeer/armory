@@ -1,6 +1,28 @@
 {% extends 'base.html' %}
 
 {% block content %}
-this is the home page!
+
+<h1> welcome to the armory, boss! </h1>
+
+<h2>current training assigments are below!</h2>
+
+<p class="btn--wrapper">
+    <a class="btn btn--action" href="/player_trainings/new">New assignment</a>
+  </p>
+  
+<table>
+    <tr>
+        <th>training exercise</th>
+        <th>players assigned</th>
+        <th>comments</th>
+    </tr>
+{%for assignment in player_training %}
+<tr>
+    <td>{{assignment.training.training_name}}</td>
+    <td>{{assignment.player.name}}</td>
+    <td>{{assignment.comments}}</td>
+    <hr>
+</tr>
+{% endfor %}
 
 {% endblock %}

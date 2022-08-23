@@ -6,11 +6,17 @@ import repositories.player_training_repository as player_training_repository
 
 player_training_blueprint = Blueprint("player_trainings", __name__)
 
+@player_training_blueprint.route("/")
+def player_training_hs():
+    player_training = player_training_repository.select_all()
+    training = training_repository.select_all()
+    player = player_repository.select_all()
+    return render_template('/index.html', player_training = player_training, training = training, player = player)
+
 @player_training_blueprint.route("/player_trainings")
 def player_training():
     player_training = player_training_repository.select_all()
     return render_template('player_trainings/index.html', player_training = player_training)
-
 
 
 @player_training_blueprint.route('/player_trainings/new', methods =['GET'])

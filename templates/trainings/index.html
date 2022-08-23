@@ -4,22 +4,20 @@
 
 <p class="button">
     <a class="button" href="/trainings/new">add new training</a>
-<div>
-    {% for training in trainings %}
-    <a href="/trainings/{{training.id}}">
-    <p class='training'>
-        {{training.training_name}}</a>
-        <ul>
-            <li >
-                <p>{{training.time}}</p>
-            </li>
-            <li>
-                <p>{{training.duration}}</p>
-            <li>
-                <p>{{training.intensity}} </p>
-            </li>
-        </ul>
-    </p>
+    <table>
+        <tr>
+            <th>training</th>
+            <th>time</th>
+            <th>duration (minutes)</th>
+            <th>intensity</th>
+        </tr>
+        {% for training in trainings %}
+        <tr>
+            <td><a href='/trainings/{{training.id}}'>{{training.training_name}}</a></td>
+            <td>{{training.time}}</td>
+            <td>{{training.duration}}</td>
+            <td>{{training.intensity}}</td>
+        </tr>
         {% endfor %}
 </div>
 {% endblock %}

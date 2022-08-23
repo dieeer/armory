@@ -11,6 +11,8 @@ import repositories.player_training_repository as player_training_repository
 
 trainings_blueprint = Blueprint("trainings", __name__)
 
+
+
 @trainings_blueprint.route("/trainings")
 def trainings():
     trainings = training_repository.select_all()
