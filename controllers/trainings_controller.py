@@ -1,4 +1,3 @@
-from crypt import methods
 from flask import Flask, render_template, request, redirect, Blueprint
 
 from models.player import Player
@@ -10,8 +9,6 @@ import repositories.training_repository as training_repository
 import repositories.player_training_repository as player_training_repository
 
 trainings_blueprint = Blueprint("trainings", __name__)
-
-
 
 @trainings_blueprint.route("/trainings")
 def trainings():

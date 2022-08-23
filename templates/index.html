@@ -18,10 +18,9 @@
     </tr>
 {%for assignment in player_training %}
 <tr>
-    <td>{{assignment.training.training_name}}</td>
+    <td><a href='/player_trainings/{{assignment.id}}'>{{assignment.training.training_name}}</a></td>
     <td>{{assignment.player.name}}</td>
     <td>{{assignment.comments}}</td>
-    <hr>
 </tr>
 {% endfor %}
 

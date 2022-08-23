@@ -2,18 +2,26 @@
 
 {% block content %}
 
+<h1> welcome to the armory, boss! </h1>
+
+<h2>current training assigments are below!</h2>
+
 <p class="btn--wrapper">
     <a class="btn btn--action" href="/player_trainings/new">New assignment</a>
   </p>
   
-
+<table>
+    <tr>
+        <th>training exercise</th>
+        <th>players assigned</th>
+        <th>comments</th>
+    </tr>
 {%for assignment in player_training %}
-<div>
-    <p>{{assignment.player.name}}</p>
-    <p>{{assignment.training.training_name}}</p>
-    <p>{{assignment.comments}}</p>
-    <hr>
+<tr>
+    <td><a href='/player_trainings/{{assignment.id}}'>{{assignment.training.training_name}}</a></td>
+    <td>{{assignment.player.name}}</td>
+    <td>{{assignment.comments}}</td>
+</tr>
 {% endfor %}
 
-</div>
 {% endblock %}

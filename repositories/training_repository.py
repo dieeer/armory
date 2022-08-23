@@ -56,4 +56,3 @@ def update(training):
     values = [training.training_name, training.time, training.duration, training.intensity, training.id]
     run_sql(sql, values)
     
-    

@@ -16,6 +16,16 @@ def save(player_training):
     player_training.id = results [0]['id']
     return player_training
 
+def select(id):
+    player_training = None
+    sql = "SELECT * FROM players_trainings WHERE id = %s"
+    values = [id]
+    result = run_sql(sql, values)[0]
+    
+    if result is not None:
+        player_training = Player_Training(result['player_id'], result['training_id'], result['comments'])
+    return player_training
+
 def select_all():
     player_trainings = []
     
