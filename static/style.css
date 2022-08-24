@@ -1,20 +1,30 @@
 h1 {
     font-family: 'Aclonica', sans-serif;
     font-size:4rem;
+    padding:16px;
 }
+
+h2 {
+    font-family: 'Aclonica', sans-serif;
+    font-size:2rem;
+    padding:16px;
+}
+
 
 body {
     font-family: 'Bebas Neue', sans-serif;
     font-weight: bold;
-    background-color:rgb(243, 243, 243);
+    background-color:rgb(233, 233, 233);
     margin: 0px;
 }
 
-table {
+table, th, td {
     table-layout: fixed;
     padding: 16px;
     margin:16px;
-}
+    border:16px;
+    border-radius: 16px;
+    background-color:floralwhite ;}
 
 table > tr > th {
     font-size: 2rem;

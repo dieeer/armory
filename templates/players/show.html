@@ -7,17 +7,23 @@
     <input class="btn btn--danger" type="submit" value="delete" onclick= "return confirm('confirm deleting {{player.name}}?')">
 
 <div> 
-    <div class='container'>
+    <table>
+        <tr>
+            <td>
+                <div class='container'>
         <img src='{{ url_for('static', filename='/images/shirt.png') }}' id='shirt-png'>
-        <div class='centered'>{{player.shirt_no}}</div>
+        <div class='centered'>{{player.shirt_no}}</div> </td>
     </div>
-    <p>{{player.position}}</p>
-    <p>{{player.fatigue}}</p>
+    <td>
+    <p>position: {{player.position}}</p>
+    <p>fatigue: {{player.fatigue}}</p>
+    </td>
+    <td>
     {% if player.fatigue >= 60 %}
         <p> match fit?: ❌</p>
         {% elif player.fatigue <= 59 %}
         <p>match fit?: ✅</p>
-        {% endif %}
+        {% endif %}</td>
 </div>
 
 <table>
