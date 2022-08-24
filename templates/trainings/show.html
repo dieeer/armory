@@ -2,16 +2,35 @@
 
 {% block content %}
 <h1> {{training.training_name}} </h1>
-<p><a href='/trainings/{{training.id}}/edit'>edit</a></p>
-<form action="/trainings/{{ training.id }}/delete" method="POST">
-    <input class="btn btn--danger" type="submit" value="delete" onclick= "return confirm('confirm deleting {{training.training_name}}?')">
 
-<div class='show'>
-    <div>
-    <p>start time: {{training.time}}</p>
-    <p>duration(minutes):{{training.duration}}</p>
-    <p>intensity: {{training.intensity}}</p>
-</div>
+
+
+
+<table class='button-table'> 
+    <tr>
+    <td><form action="/trainings/{{ training.id }}/edit" method="POST">
+        <input class="button" type="submit" value="edit"></form></td>
+    <td> <form action="/trainings/{{ training.id }}/delete" method="POST">
+        <input class="button" type="submit" value="delete" onclick= "return confirm('confirm deleting {{training.training_name}}?')"></form></td>
+    </tr>
+</table>
+
+<h2> details </h2>
+
+<table>
+    <tr>
+        <th>start time:</th>
+        <th>duration(minutes):</th>
+        <th>intensity: </th>
+    </tr>
+    <tr>
+    <td><p>{{training.time}}</p></td>
+    <td><p>{{training.duration}}</p></td>
+    <td><p>{{training.intensity}}</p></td>
+    </tr>
+</table>
+
+<h2> players assigned </h2>
 
 <table>
     <tr>
@@ -23,7 +42,8 @@
     <tr>
         <td><a href='/players/{{assignment.player.id}}'>{{assignment.player.name}}</a></td>
         <td>{{assignment.player.fatigue}}</td>
-        <td><form action="/player_trainings/{{assignment.id}}/delete" method='POST'></a><input type='submit' value="remove"></td>        
+        <td><form action="/player_trainings/{{assignment.id}}/delete" method='POST'></a>
+        <input class='button' type='remove'></td>        
     </tr>
     {% endfor %}
 </table>

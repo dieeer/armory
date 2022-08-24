@@ -2,6 +2,8 @@
 
 {% block content %}
 
+<h1>add new training</h1>
+
 <table>
 <form action="/trainings" method="post">
     <tr>
@@ -20,14 +22,17 @@
     </tr>
 
       <tr>
-        <td><label for='intensity'>intensity</label>></td>
+        <td><label for='intensity'>intensity</label></td>
         <td><select id='intensity' name="intensity">
             <option value='none'>none</option>
             <option value='low'>low</option>
             <option value='medium'>medium</option>
             <option value='high'>high</option>
-        </select>
-        <button type='submit'> add training</button></td>
+        </select></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><input class='button' type='submit' value='submit' action='/trainings/'></td>
         </tr>
 </table>
 {% endblock %}

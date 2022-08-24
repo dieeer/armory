@@ -5,9 +5,10 @@
 
 <table class='button-table'> 
     <tr>
-    <td><p><a href='/players/{{player.id}}/edit'>edit</a></p></td>
+    <td><form action="/players/{{ player.id }}/edit" method="POST">
+        <input class="button" type="submit" value="edit"></td>
     <td> <form action="/players/{{ player.id }}/delete" method="POST">
-        <input class="button-delete" type="submit" value="delete" onclick= "return confirm('confirm deleting {{player.name}}?')"> </td>
+        <input class="button-delete" type="submit" value="delete" onclick= "return confirm('confirm deleting {{player.name}}?')" color='red'> </td>
     </tr>
 </table>
 

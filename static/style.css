@@ -2,12 +2,14 @@ h1 {
     font-family: 'Aclonica', sans-serif;
     font-size:4rem;
     padding:16px;
+    text-align:center;
 }
 
 h2 {
     font-family: 'Aclonica', sans-serif;
     font-size:2rem;
     padding:16px;
+    text-align:center;
 }
 body > table, div > table {
     margin-left: auto;
@@ -36,7 +38,7 @@ table, th, td {
     background-color:floralwhite ;
     width:60%;}
 
-table > tr > th {
+table > tr > th, th {
     font-size: 2rem;
     text-align:left
 }
@@ -128,18 +130,42 @@ div.show {
     font-size:3rem;
 }
 
-.button-delete, a > p {
+.button-delete, .button {
+        font-size:auto;
+        font-family: 'Bebas Neue', cursive;
         text-decoration: none;
-        background-color: #EEEEEE;
-        color: #333333;
-        padding: 2px 6px 2px 6px;
-        border-top: 1px solid #CCCCCC;
-        border-right: 1px solid #333333;
-        border-bottom: 1px solid #333333;
-        border-left: 1px solid #CCCCCC;
-        width: 128px;
-        height: 64px;
-        align-self: start;
+        height:auto;
+        background-color: rgb(248, 119, 83);
+        color: #fff;
+        border-top: 1px solid #fff;
+        border-right: 1px solid #fff;
+        border-bottom: 1px solid #fff;
+        border-left: 1px solid #fff;
+        border-radius: 8px;
+        padding:1rem;
+        margin:auto;
+        justify-content: space-between;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+}
+
+.button-delete, .button:hover {
+    background-color: rgb(255, 155, 128);
+    color: #fff;
+    border-top: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+}
+
+.button-delete:hover {
+    background-color: rgb(213, 46, 0);
+    color: #fff;
+    border-top: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    border-left: 1px solid #ccc;
 }
 
 form {
@@ -147,3 +173,11 @@ form {
     margin-right: auto;
     justify-content:center;
 }
+
+input, select {
+    height:32px;
+    font-size:1rem;
+    width:100%;
+    border-radius: 8px;
+}
+

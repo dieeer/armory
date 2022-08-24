@@ -62,7 +62,7 @@ def update_player_fatigue(id):
     name = name
     shirt_no = shirt_no
     position = position
-    fatigue = player.raise_fatigue_with_training(10)
+    fatigue = player.raise_fatigue_with_training()
     player = Player(name, shirt_no, position, fatigue, id)
     player_repository.update(player)
     return redirect('/players')
