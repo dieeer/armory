@@ -86,6 +86,7 @@ ul > li {
     list-style: none;
     display: inline-flex;
     margin:16px;
+    align-items: center;
 }
 
 ul > li > a {
@@ -103,9 +104,10 @@ nav > img{
 
 #logo-text > a{
     text-decoration: none;
-    color: white;
-    text-shadow: 0px 0px 6px black;
-    font-size:2rem;
+    background: linear-gradient(152deg, rgba(60,151,253,1) 0%, rgba(246,16,247,1) 100%);
+    font-size:3rem;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 #logo-text > a:hover{
@@ -115,7 +117,7 @@ nav > img{
 }
 
 @keyframes logo- {
-    0% {text-shadow: 0px 0px 12px black;}
+    0%{};
     15% {text-shadow: 0px 0px 12px hotpink;}
     25% {text-shadow: 0px 0px 24px cyan;}
     50% {text-shadow: 0px 0px 12px hotpink;}
