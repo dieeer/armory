@@ -2,13 +2,21 @@
 
 {% block content %}
 
-<h1> welcome to the armory, boss! </h1>
+<h1 align-text='center'> welcome to the armory, boss! </h1>
 
-<h2>current training assigments are below!</h2>
 
-<p class="btn--wrapper">
-    <a class="btn btn--action" href="/player_trainings/new">New assignment</a>
-  </p>
+<table class='button-table'> 
+  <tr>
+  <td><p class="btn--wrapper">
+      <a class="btn btn--action" href="/player_trainings/new">new assignment</a>
+    </p></td>
+    <td><p class="button">
+      <a class="button" href="/players/new">new player</a></p></td>
+      <td><p class="button">
+          <a class="button" href="/trainings/new">new training</a></td>
+  </tr>
+</table>
+
   
 <table>
     <tr>

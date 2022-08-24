@@ -3,9 +3,14 @@
 {% block content %}
 <h1> {{player.name }} </h1>
 
-<p><a href='/players/{{player.id}}/edit'>edit</a></p>
-<form action="/players/{{ player.id }}/delete" method="POST">
-    <input class="button-delete" type="submit" value="delete" onclick= "return confirm('confirm deleting {{player.name}}?')">
+<table class='button-table'> 
+    <tr>
+    <td><p><a href='/players/{{player.id}}/edit'>edit</a></p></td>
+    <td> <form action="/players/{{ player.id }}/delete" method="POST">
+        <input class="button-delete" type="submit" value="delete" onclick= "return confirm('confirm deleting {{player.name}}?')"> </td>
+    </tr>
+</table>
+
 
 <div> 
     <table>
