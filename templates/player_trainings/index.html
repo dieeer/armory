@@ -17,11 +17,14 @@
         <th>comments</th>
     </tr>
 {%for assignment in player_training %}
+{% for training in trainings %}
 <tr>
-    <td><a href='/player_trainings/{{assignment.id}}'>{{assignment.training.training_name}}</a></td>
+    <td><a href='/trainings/{{training.id}}'>{{assignment.training.training_name}}</a></td>
     <td>{{assignment.player.name}}</td>
     <td>{{assignment.comments}}</td>
 </tr>
 {% endfor %}
+{% endfor %}
+
 
 {% endblock %}

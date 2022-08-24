@@ -17,14 +17,18 @@
         {% endif %}
 </div>
 
-<div>
-    <p>current training sessions:</p>
-    {% for assignments in trainings %}
-    <ul>
-        <li>
-            <p><a href='/trainings/{{assignments.id}}'>{{assignments.training_name}}</a></p>
-        </li>
-    </ul>
+<table>
+    <tr>
+        <th>training exercise</th>
+        <th>Duration</th>
+        <th>time</th>
+    </tr>
+    {% for assignment in trainings %}
+    <tr>
+        <td><a href='/player_trainings/{{assignment.id}}'>{{assignment.training_name}}</a></td>
+        <td>{{assignment.duration}}</td>
+        <td>{{assignment.time}}</td>
+    </tr>
     {% endfor %}
 </div>
 

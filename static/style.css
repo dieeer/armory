@@ -1,10 +1,18 @@
-/* body {
-    background-image: url('/static/images/bg.png');
-    background-size: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: scroll;
-} */
+h1 {
+    font-family: 'Aclonica', sans-serif;
+}
+
+body {
+    font-family: 'Bebas Neue', sans-serif;
+    font-weight: bold;
+
+}
+
+table {
+    table-layout: fixed;
+    padding: 16px;
+    margin:16px;
+}
 
 nav {
     width: 100%;

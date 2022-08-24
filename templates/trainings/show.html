@@ -12,20 +12,19 @@
     <p>{{training.intensity}}</p>
 </div>
 
-<div>
-    <p>players assigned:</p>
+<table>
+    <tr>
+        <th>name</th>
+        <th>fatigue</th>
+        <th>functions</th>
+    </tr>
     {% for assignment in players_trainings %}
-    <ul>
-        <li>
-            <p>{{assignment.player.name}}</p>
-                
-        </li>
-    </ul>
-
-
-    <p><form action="/player_trainings/{{assignment.id}}/delete" method='POST'>remove from training</a></p>
-        <input type='submit' value="delete">
-
+    <tr>
+        <td>{{assignment.player.name}}</td>
+        <td>{{assignment.player.fatigue}}</td>
+        <td><form action="/player_trainings/{{assignment.id}}/delete" method='POST'></a><input type='submit' value="remove"></td>        
+    </tr>
     {% endfor %}
+</table>
 
 {% endblock %}

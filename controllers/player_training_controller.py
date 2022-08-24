@@ -21,7 +21,9 @@ def player_training():
 @player_training_blueprint.route("/player_trainings/<id>", methods=['GET'])
 def player_training_view(id):
     player_training = player_training_repository.select(id)
-    return render_template('player_trainings/show.html', player_training = player_training)
+    player = player_repository.select(player_training)
+    training = training_repository.select_all()
+    return render_template('player_trainings/show.html', player_training = player_training, player = player, training = training)
 
 
 @player_training_blueprint.route('/player_trainings/new', methods =['GET'])
