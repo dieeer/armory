@@ -1,11 +1,13 @@
 h1 {
     font-family: 'Aclonica', sans-serif;
+    font-size:4rem;
 }
 
 body {
     font-family: 'Bebas Neue', sans-serif;
     font-weight: bold;
-
+    background-color:rgb(243, 243, 243);
+    margin: 0px;
 }
 
 table {
@@ -14,8 +16,41 @@ table {
     margin:16px;
 }
 
+table > tr > th {
+    font-size: 2rem;
+    text-align:left
+}
+
+.container {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size:6rem;
+}
+
+#shirt-png {
+    height:200px;
+}
+
+div > #show {
+    display: flex;
+    flex-direction: grid;
+    padding:16px
+}
+
+td {
+    font-size:2rem;
+}
+
 nav {
-    width: 100%;
+    width: 110%;
     display: flex;
     font-family: 'Bebas Neue', cursive;
     flex-flow: row;
@@ -52,7 +87,7 @@ nav > img{
 
 #logo-text > a:hover{
     animation-name: logo-;
-    animation-duration:4s;
+    animation-duration:10s;
     animation-iteration-count: infinite;
 }
 
@@ -66,6 +101,10 @@ nav > img{
 
 p {
     font-family: 'Bebas Neue', cursive;
+}
+
+div.show {
+    font-size:3rem;
 }
 
 

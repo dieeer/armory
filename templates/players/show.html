@@ -7,7 +7,10 @@
     <input class="btn btn--danger" type="submit" value="delete" onclick= "return confirm('confirm deleting {{player.name}}?')">
 
 <div> 
-    <p>{{player.shirt_no}}</p>
+    <div class='container'>
+        <img src='{{ url_for('static', filename='/images/shirt.png') }}' id='shirt-png'>
+        <div class='centered'>{{player.shirt_no}}</div>
+    </div>
     <p>{{player.position}}</p>
     <p>{{player.fatigue}}</p>
     {% if player.fatigue >= 60 %}
@@ -25,7 +28,7 @@
     </tr>
     {% for assignment in trainings %}
     <tr>
-        <td><a href='/player_trainings/{{assignment.id}}'>{{assignment.training_name}}</a></td>
+        <td><a href='/trainings/{{assignment.id}}'>{{assignment.training_name}}</a></td>
         <td>{{assignment.duration}}</td>
         <td>{{assignment.time}}</td>
     </tr>
