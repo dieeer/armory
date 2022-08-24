@@ -2,30 +2,32 @@
 
 {% block content %}
 
+<table>
 <form action="/trainings" method="post">
-    <div>
-        <label for='training_name'>exercise:</label>
-        <input type='text' name='training_name' required autofocus>
-    </div>
+    <tr>
+        <td><label for='training_name'>exercise:</label></td>
+        <td><input type='text' name='training_name' required autofocus></td>
+      </tr>
 
-    <div>
-        <label for="time">time</label>
-        <input type='text' id="time" value=":" name="time" required>
-      </div>
+    <tr>
+       <td><label for="time">time</label></td>
+        <td><input type='text' id="time" value=":" name="time" required text-align='center'></td>
+    </tr>
 
-    <div>
-        <label for="duration">Duration:</label>
-        <input type="number" id="duration" name="duration" placeholder="Duration" required min="1" max="59">
-      </div>
+    <tr>
+        <td><label for="duration">Duration:</label></td>
+        <td><input type="number" id="duration" name="duration" placeholder="Duration" required min="1" max="59"></td>
+    </tr>
 
-      <div>
-        <label for='intensity'>intensity</label>>
-        <select id='intensity' name="intensity">
+      <tr>
+        <td><label for='intensity'>intensity</label>></td>
+        <td><select id='intensity' name="intensity">
             <option value='none'>none</option>
             <option value='low'>low</option>
             <option value='medium'>medium</option>
             <option value='high'>high</option>
         </select>
-        <button type='submit'> add training</button>
-
+        <button type='submit'> add training</button></td>
+        </tr>
+</table>
 {% endblock %}
