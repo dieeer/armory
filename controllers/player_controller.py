@@ -56,3 +56,13 @@ def update_player(id):
 def delete_player(id):
     player_repository.delete(id)
     return redirect('/players')
+
+@players_blueprint.route('/players/<id>', methods=['POST'])
+def update_player_fatigue(id):
+    name = name
+    shirt_no = shirt_no
+    position = position
+    fatigue = player.raise_fatigue_with_training(10)
+    player = Player(name, shirt_no, position, fatigue, id)
+    player_repository.update(player)
+    return redirect('/players')

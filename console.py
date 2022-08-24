@@ -3,12 +3,11 @@ from controllers.player_training_controller import player_training
 from models.player import Player
 from models.training import Training
 from models.player_training import Player_Training
-from models.current_squad import CurrentSquad
+
 
 import repositories.player_repository as player_repository
 import repositories.training_repository as training_repository
 import repositories.player_training_repository as player_training_repository
-import repositories.current_squad_repository as current_squad_repository
 
 player_repository.delete_all()
 training_repository.delete_all()
@@ -61,8 +60,6 @@ player_training_repository.save(player_training1)
 player_training2 = Player_Training(player4, training2, "solid as usual")
 player_training_repository.save(player_training2)
 
-current_squad = CurrentSquad(player4, player9, player7, player8, player17, player12, player11, player10, player1, player2, player13, player3, player14, player16, player15, player6, player5)
-current_squad_repository.save(current_squad)
 
 
 

@@ -43,9 +43,21 @@ nav > img{
 }
 
 #logo-text > a:hover{
-    text-shadow: 0px 0px 12px red,  0px 0px 24px blue;
+    animation-name: logo-;
+    animation-duration:4s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes logo- {
+    0% {text-shadow: 0px 0px 12px black;}
+    15% {text-shadow: 0px 0px 12px hotpink;}
+    25% {text-shadow: 0px 0px 24px cyan;}
+    50% {text-shadow: 0px 0px 12px hotpink;}
+    75% {text-shadow: 0px 0px 24px cyan;}
 }
 
 p {
     font-family: 'Bebas Neue', cursive;
 }
+
+

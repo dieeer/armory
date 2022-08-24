@@ -61,3 +61,8 @@ def delete(id):
     sql = "DELETE FROM players_trainings WHERE id = %s"
     values =[id]
     run_sql(sql, values)
+
+def raise_fatigue(id):
+    sql = "UPDATE players SET fatigue = %s WHERE id = %s"
+    values = [player.fatigue, player.id]
+    run_sql(sql, values)
