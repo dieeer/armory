@@ -43,7 +43,7 @@
         <td><a href='/players/{{assignment.player.id}}'>{{assignment.player.name}}</a></td>
         <td>{{assignment.player.fatigue}}</td>
         <td><form action="/player_trainings/{{assignment.id}}/delete" method='POST'></a>
-        <input class='button' type='remove'></td>        
+        <input class="button" type="submit" value="remove"></td>        
     </tr>
     {% endfor %}
 </table>

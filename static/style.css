@@ -116,12 +116,23 @@ nav > img{
     animation-iteration-count: infinite;
 }
 
+#logo-text > a:after{
+    animation-name: logo-text;
+    animation-duration:10s;
+    animation-iteration-count: infinite;
+}
+
 @keyframes logo- {
     0%{};
     15% {text-shadow: 0px 0px 12px hotpink;}
     25% {text-shadow: 0px 0px 24px cyan;}
     50% {text-shadow: 0px 0px 12px hotpink;}
     75% {text-shadow: 0px 0px 24px cyan;}
+}
+
+@keyframes logo-text {
+    0% {background: linear-gradient(152deg, rgba(60,151,253,1) 0%, rgba(246,16,247,1) 100%);}
+    50% {background: linear-gradient(76deg,rgba(246,16,247,1)0% , rgba(60,151,253,1) 100%);}
 }
 
 p {
